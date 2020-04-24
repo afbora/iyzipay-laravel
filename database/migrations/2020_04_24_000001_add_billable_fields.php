@@ -13,7 +13,7 @@ class AddBillableFields extends Migration
      */
     public function __construct()
     {
-        $billableModelName       = config('iyzipay.billableModel');
+        $billableModelName = config('iyzipay.billableModel');
         $this->billableTableName = (new $billableModelName)->getTable();
     }
 
