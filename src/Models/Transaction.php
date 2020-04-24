@@ -7,9 +7,11 @@ use Afbora\IyzipayLaravel\IyzipayLaravelFacade as IyzipayLaravel;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Transaction extends Model
 {
+    use SoftDeletes;
 
     protected $fillable = [
         'amount',
@@ -64,6 +66,10 @@ class Transaction extends Model
 
     public function getRefundedAmountAttribute()
     {
+        if (empty($this->refunds) === true) {
+            return 0;
+        }
+
         return array_sum(array_column($this->refunds, 'amount'));
     }
 }

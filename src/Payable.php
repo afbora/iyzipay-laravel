@@ -89,7 +89,7 @@ trait Payable
      */
     public function removeCreditCard(CreditCard $creditCard): bool
     {
-        if ( ! $this->creditCards->contains($creditCard)) {
+        if (!$this->creditCards->contains($creditCard)) {
             throw new CardRemoveException('This card does not belong to member!');
         }
 
@@ -121,9 +121,9 @@ trait Payable
         $this->subscriptions()->save(
             new Subscription([
                 'next_charge_amount' => $plan->price,
-                'currency'           => $plan->currency,
-                'next_charge_at'     => Carbon::now()->addDays($plan->trialDays)->startOfDay(),
-                'plan'               => $plan
+                'currency' => $plan->currency,
+                'next_charge_at' => Carbon::now()->addDays($plan->trialDays)->startOfDay(),
+                'plan' => $plan
             ])
         );
 
@@ -141,8 +141,7 @@ trait Payable
     public function isSubscribeTo(Plan $plan): bool
     {
         foreach ($this->subscriptions as $subscription) {
-            if ($subscription->plan == $plan)
-            {
+            if ($subscription->plan && $subscription->plan->id === $plan->id && $subscription->canceled() === false) {
                 return $subscription->next_charge_at > Carbon::today()->startOfDay();
             }
         }
@@ -155,6 +154,8 @@ trait Payable
      */
     public function paySubscription()
     {
+        $this->load('subscriptions');
+
         foreach ($this->subscriptions as $subscription) {
             if ($subscription->canceled() || $subscription->next_charge_at > Carbon::today()->startOfDay()) {
                 continue;
@@ -178,6 +179,6 @@ trait Payable
      */
     public function isBillable(): bool
     {
-        return ! empty($this->bill_fields);
+        return !empty($this->bill_fields);
     }
 }

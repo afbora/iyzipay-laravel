@@ -17,6 +17,7 @@ class CreateSubscriptionsTable extends Migration
             $table->timestamp('canceled_at')->nullable();
             $table->longText('plan');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

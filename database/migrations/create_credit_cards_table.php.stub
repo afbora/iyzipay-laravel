@@ -17,6 +17,7 @@ class CreateCreditCardsTable extends Migration
             $table->unique(['billable_id', 'token']);
             $table->string('bank')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

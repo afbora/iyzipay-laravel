@@ -1,5 +1,13 @@
 # Iyzipay (by Iyzico) Integration for Laravel
 
+[![Source](https://img.shields.io/badge/source-afbora/iyzipay--laravel-blue?style=flat-square)](https://github.com/afbora/iyzipay-laravel)
+[![Download](https://img.shields.io/packagist/dt/afbora/iyzipay--laravel?style=flat-square)](https://github.com/afbora/iyzipay-laravel)
+[![Open Issues](https://img.shields.io/github/issues-raw/afbora/iyzipay-laravel?style=flat-square)](https://github.com/afbora/iyzipay-laravel)
+[![Last Commit](https://img.shields.io/github/last-commit/afbora/iyzipay-laravel?style=flat-square)](https://github.com/afbora/iyzipay-laravel)
+[![Release](https://img.shields.io/github/v/release/afbora/iyzipay-laravel?style=flat-square)](https://github.com/afbora/iyzipay-laravel)
+[![License](https://img.shields.io/github/license/afbora/iyzipay-laravel?style=flat-square)](https://github.com/afbora/iyzipay-laravel)
+
+
 This package is under development. All contributions are welcome!
 
 You can sign up for an iyzico account at [iyzico.com](https://www.iyzico.com).
