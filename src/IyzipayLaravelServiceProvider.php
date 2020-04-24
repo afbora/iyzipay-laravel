@@ -19,7 +19,9 @@ class IyzipayLaravelServiceProvider extends ServiceProvider
             __DIR__ . '/../config/iyzipay.php' => config_path('iyzipay.php')
         ]);
 
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->publishes([
+            __DIR__ . '/../database/migrations' => database_path('migrations'),
+        ]);
 
         $this->app->booted(function () {
             $schedule = $this->app->make(Schedule::class);
