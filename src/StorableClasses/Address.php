@@ -6,7 +6,6 @@ use Afbora\IyzipayLaravel\Exceptions\Fields\AddressFieldsException;
 
 class Address extends StorableClass
 {
-
     /**
      * @var string
      */

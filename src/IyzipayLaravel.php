@@ -16,6 +16,7 @@ use Afbora\IyzipayLaravel\Traits\ManagesPlans;
 use Afbora\IyzipayLaravel\Traits\PreparesCreditCardRequest;
 use Afbora\IyzipayLaravel\Traits\PreparesTransactionRequest;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Support\Collection;
 use Iyzipay\Model\ApiTest;
 use Iyzipay\Model\Payment;
@@ -166,7 +167,7 @@ class IyzipayLaravel
     {
         try {
             $check = ApiTest::retrieve($this->apiOptions);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             throw new IyzipayConnectionException();
         }
 
@@ -241,7 +242,7 @@ class IyzipayLaravel
 
     protected function getLocale(): string
     {
-        return (config('app.locale') == 'tr') ? Locale::TR : Locale::EN;
+        return config('app.locale') === 'tr' ? Locale::TR : Locale::EN;
     }
 
     protected function getOptions(): Options

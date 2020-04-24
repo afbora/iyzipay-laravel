@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Afbora\IyzipayLaravel;
 
 interface ProductContract

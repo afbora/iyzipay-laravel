@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Afbora\IyzipayLaravel\Commands;
-
 
 use Afbora\IyzipayLaravel\Events\SubscriptionCouldNotPaid;
 use Afbora\IyzipayLaravel\Exceptions\Transaction\TransactionSaveException;

@@ -8,7 +8,6 @@ use Iyzipay\Model\BasketItemType;
 
 class Plan extends StorableClass implements ProductContract
 {
-
     /**
      * The plan's id
      *

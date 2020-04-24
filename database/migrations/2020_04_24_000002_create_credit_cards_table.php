@@ -14,10 +14,11 @@ class CreateCreditCardsTable extends Migration
             $table->string('alias', 100);
             $table->string('number', 10);
             $table->string('token');
-            $table->unique(['billable_id', 'token']);
             $table->string('bank')->nullable();
             $table->timestamps();
             $table->softDeletes();
+
+            $table->unique(['billable_id', 'token']);
         });
     }
 

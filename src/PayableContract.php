@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Afbora\IyzipayLaravel;
 
 use Afbora\IyzipayLaravel\Models\CreditCard;
@@ -11,7 +10,6 @@ use Illuminate\Support\Collection;
 
 interface PayableContract
 {
-
     public function getKey();
 
     public function creditCards(): HasMany;

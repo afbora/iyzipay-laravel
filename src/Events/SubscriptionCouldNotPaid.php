@@ -6,7 +6,6 @@ use Afbora\IyzipayLaravel\PayableContract as Payable;
 
 class SubscriptionCouldNotPaid
 {
-
     /**
      * @var Payable
      */

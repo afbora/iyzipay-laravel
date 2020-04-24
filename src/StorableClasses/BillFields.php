@@ -6,7 +6,6 @@ use Afbora\IyzipayLaravel\Exceptions\Fields\BillFieldsException;
 
 class BillFields extends StorableClass
 {
-
     /**
      * @var string
      */

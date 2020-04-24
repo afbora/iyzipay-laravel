@@ -4,7 +4,6 @@ namespace Afbora\IyzipayLaravel\StorableClasses;
 
 abstract class StorableClass
 {
-
     /**
      * StorableClass constructor.
      *

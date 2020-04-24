@@ -167,7 +167,7 @@ trait Payable
                 $transaction->save();
             }
 
-            $subscription->next_charge_at = $subscription->next_charge_at->addMonths(($subscription->plan->interval == 'yearly') ? 12 : 1);
+            $subscription->next_charge_at = $subscription->next_charge_at->addMonths(($subscription->plan->interval === 'yearly') ? 12 : 1);
             $subscription->save();
         }
     }
